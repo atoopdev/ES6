@@ -111,7 +111,68 @@ const planet = "Earth"
 // }
 
 // another example
-let topics = ["Baking", "Stir fries", "Pickles"]
-for(let topic of topics){
-    console.log(topic)
+// let topics = ["Baking", "Stir fries", "Pickles"]
+// for(let topic of topics){
+//     console.log(topic)
+// }
+
+// classes
+// class Vehicle{
+//     constructor(description, wheels){
+//         this.description = description;
+//         this.wheels = wheels;
+//     }
+//     describeYourself(){
+//         console.log(`I am a ${this.description} with ${this.wheels} wheels.`)
+//     }
+// }
+
+// let mustang = new Vehicle("race car", 4)
+// console.log(mustang)
+// mustang.describeYourself()
+
+// // inheritance with Javascript
+// class SemiTruck extends Vehicle{
+//     constructor(){
+//         // uses Vehicle constructor from above
+//         super("semi truck", 18)
+//     }
+// }
+
+// let groceryStoreSemi = new SemiTruck()
+// // will have semitruck descr and wheels
+// groceryStoreSemi.describeYourself()
+
+// get and set - adds/reads data
+// let attendance = {
+//     _list:[],
+//     set addName(name){
+//         this._list.push(name);
+//     },
+//     get list(){
+//         return this._list.join(", ");
+//     }
+
+// }
+
+// attendance.addName = "Nicky Minaje"
+// attendance.addName = "May Lin"
+
+// console.log(attendance.list)
+
+// second example
+class Hike {
+    constructor(distance, pace){
+        this.distance = distance;
+        this.pace = pace;
+    }
+    get lengthInHours(){
+        return `${this.calcLength()} hours`
+    }
+    calcLength(){
+        return this.distance / this.pace
+    }
 }
+
+const mtSi = new Hike(10, 2);
+console.log(mtSi.lengthInHours)
