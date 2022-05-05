@@ -161,18 +161,86 @@ const planet = "Earth"
 // console.log(attendance.list)
 
 // second example
-class Hike {
-    constructor(distance, pace){
-        this.distance = distance;
-        this.pace = pace;
-    }
-    get lengthInHours(){
-        return `${this.calcLength()} hours`
-    }
-    calcLength(){
-        return this.distance / this.pace
-    }
-}
+// class Hike {
+//     constructor(distance, pace){
+//         this.distance = distance;
+//         this.pace = pace;
+//     }
+//     get lengthInHours(){
+//         return `${this.calcLength()} hours`
+//     }
+//     calcLength(){
+//         return this.distance / this.pace
+//     }
+// }
 
-const mtSi = new Hike(10, 2);
-console.log(mtSi.lengthInHours)
+// const mtSi = new Hike(10, 2);
+// console.log(mtSi.lengthInHours)
+
+// functions
+
+// string.repeat
+// let word = "hello"
+// let talking = word.repeat(20)
+// // repeats 20 times
+// console.log(talking)
+
+// let cat = {
+//     meow(times){
+//         console.log("meow".repeat(times))
+//     },
+
+// };
+// cat.meow(3)
+
+// default function parameters
+// will use defaults if no value provided
+// function add(x=5, y=6){
+//     console.log(x+y)
+// }
+// // will overwrite defaults
+// add(1, 2)
+
+// arrow functions instead of full function declaration
+
+// let studentList = function(students){
+//     console.log(students)
+// }
+// rewrite to use arrow
+// let studentList = (students) =>
+//         console.log(students)
+
+// studentList(["A", "B", "C"])
+
+// another example using arrow function
+// let list = ["apple", "banana", "cherry"]
+// // output each item
+// list.map((item) => console.log(item))
+
+// arrow functions and "this"
+// let person = {
+//     first: "Amanda",
+//     hobbies: ["running", "reading"],
+//     printHobbies: function(){
+//         // as written "this" will not work but return undefined
+//         this.hobbies.forEach(function(hobby){
+//             let string = `${this.first} likes to ${hobby}`
+//             console.log(string)
+//         })
+//     }
+// }
+// person.printHobbies()
+
+// fix
+// let person = {
+//     first: "Amanda",
+//     hobbies: ["running", "reading"],
+//     printHobbies: function(){
+//         // replace function with arrow function and works
+//         this.hobbies.forEach((hobby) => {
+//             let string = `${this.first} likes to ${hobby}`
+//             console.log(string)
+//         })
+//     }
+// }
+// person.printHobbies()
