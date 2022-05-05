@@ -244,3 +244,89 @@ const planet = "Earth"
 //     }
 // }
 // person.printHobbies()
+
+// async
+
+// make a delay function
+// const delay = (seconds) =>
+// // resolve means if everything goes ok
+// new Promise((resolve, reject) =>{
+//     // add error catching reject scenario
+//     if(typeof seconds !== "number"){
+//         reject(
+//             new Error("seconds must be a number")
+//         )
+//     }
+
+//     setTimeout(resolve, seconds * 1000)
+
+// })
+// delay(1).then(()=> console.log("one second"))
+// delay(5).then(()=> console.log("five seconds"))
+// delay("apple").then(()=> console.log("five seconds"))
+
+// fetch
+// fetch(`http://api.open-notify.org/astros.json`)
+// .then((res) => res.json())
+// .then(console.log)
+
+// turn into function
+// let getSpacePeople = () =>
+// fetch(`http://api.open-notify.org/astros.json`)
+// .then((res) => res.json())
+
+// // get data from getSpacePeople and console log
+// getSpacePeople().then(console.log)
+
+// // get just the names
+// let spaceNames = () =>
+// getSpacePeople()
+// .then((json) => json.people)
+// .then((people) => people.map((p)=>p.name))
+// // adds formatting for readability
+// .then((names) => names.join(", "))
+
+// spaceNames().then(console.log)
+
+// async/await
+// const delay = (seconds) =>
+// // resolve means if everything goes ok
+// new Promise((resolve, reject) =>{
+//     // add error catching reject scenario
+//     if(typeof seconds !== "number"){
+//         reject(
+//             new Error("seconds must be a number")
+//         )
+//     }
+
+//     setTimeout(resolve, seconds * 1000)
+
+// })
+// // will not work without async keyword
+// const countToFive = async () =>{
+//     console.log("zero seconds")
+//     // wait for function to execute
+//     await delay(1)
+//     console.log("One second")
+//     await delay(1)
+//     console.log("Two seconds")
+//     await delay(1)
+//     console.log("Three seconds")
+//     await delay(1)
+//     console.log("Four seconds")
+//     await delay(1)
+//     console.log("Five seconds")
+// }
+// countToFive()
+
+// async/await with fetch
+const gitHubRequest = async (login) =>{
+    let response = await fetch(
+        `https://api.github.com/users/${login}`
+    )
+    let json = await response.json()
+    let summary = `${json.name}, ${json.company}`
+    console.log(summary)
+}
+
+gitHubRequest("atoopdev")
